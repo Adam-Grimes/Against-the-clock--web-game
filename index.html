@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Against the Clock</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!--Settings Icon -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Main Game Container --> 
+  <div id="game-container">
+    <!-- Reset Button at top right -->
+    <button id="reset-btn" title="Reset Game">Reset</button>
+    
+    <!-- Settings Icon and Panel inside the container at top left -->
+    <div id="settings-container">
+      <button id="settings-toggle" title="Settings">
+        <i class="material-icons">settings</i>
+      </button>
+      <div id="config-panel" class="hidden">
+        <div class="config-item">
+          <label for="config-time">Time (sec):</label>
+          <input type="number" id="config-time" min="10" value="60">
+        </div>
+        <div class="config-item">
+          <label for="config-questions">Questions:</label>
+          <input type="number" id="config-questions" min="1" value="5">
+        </div>
+        <button id="apply-settings" style="margin-top: 10px; width: 100%;">Apply</button>
+      </div>
+    </div>
+    
+    <header>
+      <h1>Against the Clock</h1>
+      <div id="moneyDisplay">Money: €<span id="moneyValue"></span></div>
+    </header>
+  
+    <main>
+      <!-- Game area displaying players' info -->
+      <section id="game-area">
+        <div id="player1" class="player">
+          <h2>Player 1</h2>
+          <div class="info">
+            <p>Time Left: <span id="timer1">60</span>s</p>
+            <p>Correct Answers: <span id="score1">0</span></p>
+          </div>
+          <button id="startPlayer1">Start Player 1</button>
+        </div>
+        <div id="player2" class="player">
+          <h2>Player 2</h2>
+          <div class="info">
+            <p>Time Left: <span id="timer2">60</span>s</p>
+            <p>Correct Answers: <span id="score2">0</span></p>
+          </div>
+          <button id="startPlayer2" disabled>Start Player 2</button>
+        </div>
+      </section>
+      <!-- Question Section (hidden by default) -->
+      <section id="question-section" class="hidden">
+        <!-- Player turn label -->
+        <div id="player-turn"></div>
+        <h2 id="question"></h2>
+        <div id="answers"></div>
+      </section>
+      <!-- Result Section (hidden until needed) -->
+      <section id="result-section" class="hidden">
+        <h2 id="resultMessage"></h2>
+        <button id="new-round-btn">New Round</button>
+      </section>
+    </main>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

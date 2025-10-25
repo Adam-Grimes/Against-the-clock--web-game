@@ -1,0 +1,259 @@
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #f8efd4, #e0f7fa); 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+#game-container {
+  width: 900px;
+  height: 650px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+#reset-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#reset-btn:hover {
+  background: #c0392b;
+}
+
+#settings-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+#settings-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+#settings-toggle .material-icons {
+  font-size: 24px;
+  color: #333;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+#settings-toggle:hover .material-icons {
+  transform: rotate(30deg);
+}
+#config-panel {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 5px;
+  width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+.config-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+}
+.config-item label {
+  font-size: 0.9em;
+  color: #555;
+}
+.config-item input {
+  width: 50px;
+  padding: 3px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Header Styling */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+  
+}
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #2980b9;
+  
+}
+#moneyDisplay {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+/* Main Game Area */
+#game-area {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.player {
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.player:hover {
+  transform: scale(1.03);
+}
+.player h2 {
+  margin-top: 0;
+  color: #2980b9;
+}
+.info p {
+  margin: 8px 0;
+  font-size: 1.1em;
+}
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background: #2980b9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+button:hover:not(:disabled) {
+  background: #1c5980;
+}
+button:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+}
+
+/* Question Section */
+#question-section {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 40px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-top: 50px; 
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+#player-turn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #2980b9;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+#question {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  color: #34495e;
+  text-align: center;
+}
+
+#answers {
+  display: grid;
+  grid-template-columns: repeat(2, 180px);
+  grid-auto-rows: 50px;                 
+  gap: 10px;                        
+  justify-content: center;             
+}
+
+
+.answer-btn {
+  background: #fff;
+  color: #2980b9;
+  border: 2px solid #2980b9;
+  border-radius: 5px;
+  width: 180px;
+  height: 50px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  text-align: center;          
+  white-space: normal;         
+  word-wrap: break-word;       
+  padding: 5px;
+}
+.answer-btn:hover {
+  background: #f0f8ff; 
+  color: #fff; 
+}
+
+/* Result Section */
+#result-section {
+  text-align: center;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 30px;
+  margin-top: 60px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+#resultMessage {
+  font-size: 1.5em;
+  color: #e74c3c;
+  margin-bottom: 15px;
+}
+#resultMessage.timeout {
+  color: #e74c3c;
+  font-weight: bold;
+}
+#new-round-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #2980b9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#new-round-btn.hidden {
+  display: none;
+}
+#new-round-btn:hover {
+  background: #1c5980;
+}
+
+#apply-settings {
+  background: #2980b9;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+#apply-settings:hover {
+  background: #1c5980;
+}
