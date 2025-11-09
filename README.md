@@ -2,9 +2,6 @@
 
 "Against the Clock" is a 2-player, turn-based trivia game built with vanilla JavaScript, HTML, and CSS. Players compete to answer a set number of questions as quickly as possible. The winner is determined not just by the number of correct answers, but by the time left on their clock, which is then used to calculate a final "money" prize.
 
-*(Optional: Add a screenshot of your game here)*
-`![Screenshot of the Against the Clock game interface]`
-
 ---
 
 ## 🚀 Key Features
